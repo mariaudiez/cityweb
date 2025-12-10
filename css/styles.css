@@ -7,10 +7,23 @@
   font-style: normal;
 }
 
-/* TIPOGRAFÍA DESCARGADA */
+/* TIPOGRAFÍA DESCARGADA
 @font-face {
   font-family: "Golften";
   src: url(../fonts/golftendemoregular-bwdx8.otf);
+} */
+
+.red-hat-display {
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.newsreader {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 /* GENERAMOS LAS VARIABLES CE CSS */
@@ -132,7 +145,7 @@
 
 /* TÍTULOS */
 h1 {
-  font-family: var(--specialTypo);
+  font-family: 
   font-weight: 100;
   font-size: 8rem;
   margin-top: 10px;
@@ -165,14 +178,6 @@ h2 {
   width: 100%;
   background-color: var(--colorLinea);
   margin: 10px 0;
-  opacity: 15%;
-}
-
-.blog-line {
-  height: 1px;
-  width: 100%;
-  background-color: var(--colorLinea);
-  margin: -5px 0;
   opacity: 15%;
 }
 
@@ -304,8 +309,8 @@ h2 {
   width: 100%;
   height: auto;
   border: none;
-  outline: 1px solid var(--marcoFoto);
-  outline-offset: 5px;
+  /* outline: 1px solid var(--marcoFoto);
+  outline-offset: 5px; */
 }
 
 .item-description {
@@ -321,100 +326,6 @@ h2 {
   font-weight: 300;
 }
 
-/* SUSCRIPCION
-
-.blog-info {
-  font-family: var(--normalTypo);
-  font-weight: 100;
-  font-size: 1rem;
-  padding-top: 20px;
-  padding-left: 100px;
-} */
-*/
-
-/* FORMULARIO
-#formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 15px;
-}
-
-#formulario label {
-  font-family: var(--normalTypo);
-  font-weight: 200;
-  font-size: 16px;
-}
-
-/* Estilo base del campo */
-input[type="email"] {
-  all: unset; /* Elimina todos los estilos predeterminados */
-  background-color: var(--colorAzul);
-  padding: 5px;
-  font-size: 16px;
-  font-family: var(--normalTypo);
-  font-weight: 100;
-  color: var(--colorNegro);
-  border: 2px solid var(--colorAzul);
-  outline: none;
-}
-
-#formulario button {
-  all: unset; /* Elimina todos los estilos predeterminados */
-  font-family: var(--specialTypo);
-  font-weight: 100;
-  font-size: 20px;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 0.25px;
-}
-
-/* Estilo para un correo válido */
-input.valid {
-  border-color: var(--colorGreen);
-}
-
-/* Estilo para un correo inválido */
-input.invalid {
-  border-color: var(--colorRed);
-}
-
-/* Mensaje de error */
-.error-message {
-  color: var(--colorRed);
-  font-family: var(--normalTypo);
-  font-weight: 100;
-  font-size: 12px;
-  margin-top: 5px;
-  display: none;
-}
-*/
-
-
-
-/* CARRUSEL IMAGENES */
-
-#gallery img {
-  width: 100%;
-  vertical-align: middle;
-}
-
-#gallery {
-  width: 100%;
-  margin: 1em auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-#gallery > figure {
-  display: none;
-  overflow: hidden;
-  animation-name: fade;
-  animation-duration: 4s;
-}
-
 @keyframes fade {
   from {
     opacity: 0.2;
@@ -426,13 +337,6 @@ input.invalid {
 }
 
 /* TRANSPORTE */
-
-.img-transporte img {
-  width: 100%;
-  height: auto;
-  margin-top: 80px;
-  margin-bottom: 50px;
-}
 
 .info-transporte {
   display: flex;
@@ -448,6 +352,28 @@ input.invalid {
   margin-left: 100px;
   margin-right: 100px;
   font-size: 14px;
+}
+
+/* CARRUSEL IMAGENES */
+
+#gallery img {
+  width: 100%;
+  vertical-align: middle;
+  height: 500px;
+}
+
+#gallery {
+  width: 100%;
+  margin: 1em auto;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+#gallery > figure {
+  display: none;
+  overflow: hidden;
+  animation-name: fade;
+  animation-duration: 4s;
 }
 
 /* STREET ART  */
@@ -471,8 +397,7 @@ input.invalid {
   width: 100%;
   height: auto;
   border: none;
-  outline: 1px solid var(--marcoFoto);
-  outline-offset: 5px;
+
   transition: padding 1s ease;
 }
 
@@ -552,4 +477,155 @@ footer {
 }
 .logo img {
   width: 100%;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1000px) {
+  /* Títulos */
+  h1 {
+    margin-left: 5px;
+  }
+
+  .invertido {
+    margin-right: 5px;
+  }
+
+  h2 {
+    margin-left: 5px;
+  }
+
+  /* Agenda */
+  .fotos-seccion {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Tranporte // información básica */
+  .info-transporte p {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  /* Streetart */
+  .fotos-streetart {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+/* Lega un momento en lo que podiamos considerar ya un tamaño tablet que hay que hacer cambios para organizar el layout de la web de una manera más acorde a los tamaños próximos */
+
+@media screen and (max-width: 700px) {
+  /* Vamos a empezar por reducir los títulos de tamaño para que estén acordes a la pantalla */
+  h1 {
+    font-size: 4rem;
+  }
+
+  .line {
+    margin: -13px 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  /* Ahora vamos a pasar a adptar el layout de la imáganes */
+  /* Emepezando por la agenda y la gastroinfo */
+  .fotos-seccion {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .item {
+    width: 40%;
+  }
+
+  /* Agustamos las imágenes de las zonas verdes */
+  .fotos-streetart {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .streetart {
+    width: 40%;
+  }
+
+  /* Agustamos el apartedo de playas de la home */
+  .tarjeta_barrio {
+    flex-direction: column;
+    margin-left: 5px;
+  }
+
+  .tarjeta_barrio:hover {
+    margin-left: 55px;
+  }
+
+  .barrio-p {
+    width: 90%;
+  }
+
+  .barrio-img img {
+    padding-left: 40px;
+    width: 70%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--colorAzul);
+    height: 400px;
+    width: 100%;
+    justify-content: end;
+    align-items: flex-end;
+    gap: 15px;
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-right: 20px;
+  }
+
+  .nav-links li:last-child {
+    margin-bottom: 20px;
+  }
+
+  /* Agustamos el menú de navegación del footer */
+  .navbarfooter {
+    gap: 20px;
+  }
+
+  .nav-links-footer {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* Por último, vas a hacer ajustes en los tamaños de pantalla más pequeños, los que corresponderían a los móviles */
+@media screen and (max-width: 500px) {
+  /* Ahora vamos a pasar a adptar el layout de la imáganes */
+  /* Emepezando por la agenda y la gastroinfo */
+  .item {
+    width: 90%;
+  }
+
+  /* Agustamos las imágenes de las zonas verdes */
+  .streetart {
+    width: 90%;
+  }
+
+  /* Y por último ajustamos el layout de la parte de playas, eliminando la información de cada una debido a la anchura de página de la que disponemos */
+  .barrio-p p:last-child {
+    display: none;
+  }
 }
