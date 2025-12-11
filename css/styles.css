@@ -7,39 +7,31 @@
   font-style: normal;
 }
 
-/* TIPOGRAFÍA DESCARGADA
+/* Tipografía descargada */
+
 @font-face {
-  font-family: "Golften";
-  src: url(../fonts/golftendemoregular-bwdx8.otf);
-} */
-
-.red-hat-display {
-  font-family: "Red Hat Display", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.newsreader {
-  font-family: "Newsreader", serif;
-  font-optical-sizing: auto;
+  font-family: "Casanova";
+  src: url("../fonts/Casanova Serif Display.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
 }
 
 /* GENERAMOS LAS VARIABLES CE CSS */
 
 :root {
-  --colorAzul: rgba(120, 172, 192, 1);
-  --colorVerde: rgba(150, 166, 55, 1);
-  --colorRosa: rgba(224, 127, 137, 1);
-  --colorBlanco: rgb(255, 255, 255);
-  --colorNegro: rgb(0, 0, 0);
-  --colorGreen: rgb(0, 128, 0);
-  --colorRed: rgb(255, 0, 0);
-  --colorLinea: rgba(0, 0, 0, 0.543);
-  --marcoFoto: rgba(0, 0, 0, 0.13);
+  --white: #f7f8f9;
+  --blue: rgba(120, 172, 192, 1);
+  --green: rgba(150, 166, 55, 1);
+  --pink: rgba(224, 127, 137, 1);
+  --pink2: rgb(235, 176, 182);
+  --orange: rgb(246, 165, 67);
+  --yellow: rgb(239, 230, 146);
+  --black: rgb(0, 0, 0);
+
+  --Linea: rgba(0, 0, 0, 0.543);
+
   --normalTypo: "Roboto Condensed";
-  --specialTypo: "Golften";
+  --specialTypo: "Casanova";
 }
 
 * {
@@ -54,7 +46,7 @@
 
 .fondo-header {
   height: 100vh;
-  background-image: url("https://ik.imagekit.io/mariaudiez/Art%20Festival/IMG_8861.jpg?updatedAt=1762212944920");
+  background-image: url("https://ik.imagekit.io/mariaudiez/foto%20tate%201.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -74,7 +66,7 @@
 /* NOMBRE DE LA CIUDAD + INFORMACIÓN A LA IZQUIERDA */
 .navbar .city a {
   text-decoration: none;
-  color: var(--colorBlanco);
+  color: var(--white);
   z-index: 10000;
 }
 
@@ -106,7 +98,7 @@
   display: block;
   width: 25px;
   height: 1px;
-  background-color: var(--colorBlanco);
+  background-color: var(--white);
   transition: all 0.3s;
 }
 
@@ -120,7 +112,7 @@
 /* diseño de cada uno de ellos */
 .nav-links a {
   text-decoration: none;
-  color: var(--colorBlanco);
+  color: var(--white);
   font-size: 0.9rem;
   font-family: var(--normalTypo);
   font-weight: 100;
@@ -145,11 +137,13 @@
 
 /* TÍTULOS */
 h1 {
-  font-family: 
-  font-weight: 100;
+  font-family: "Casanova Serif Display", serif;
+  font-weight: 10;
   font-size: 8rem;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-left: 100px;
+  margin-bottom: 10px;
+  padding-top: 20px;
 }
 
 .invertido {
@@ -158,7 +152,7 @@ h1 {
 }
 
 h2 {
-  font-family: var(--specialTypo);
+  font-family: "Bodoni Moda", serif;
   font-weight: 100;
   font-size: 3rem;
   margin-top: 10px;
@@ -184,8 +178,9 @@ h2 {
 /* Información general arte en londres */
 
 #city-info {
-  padding: 0%;
   padding-bottom: 40px;
+  padding-top: 0px;
+  background-color: var(--pink2);
 }
 
 #city-info p {
@@ -218,7 +213,7 @@ h2 {
 
 .carrusel_1 > div img {
   width: 100%;
-  height: 75%;
+  height: 370px;
   object-fit: cover;
   border-radius: 0%;
 }
@@ -256,6 +251,10 @@ h2 {
 
 /* Barrios artisticos */
 
+#barrios {
+  padding-bottom: 40px;
+  /* background-color: var(--pink2); */
+}
 .tarjeta_barrio {
   margin-top: 50px;
   display: flex;
@@ -288,8 +287,67 @@ h2 {
   height: auto;
 }
 
+/* CARRUSEL IMAGENES */
+
+#gallery img {
+  width: 100%;
+  vertical-align: middle;
+  height: 500px;
+}
+
+#gallery {
+  width: 100%;
+  margin: 1em auto;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+#gallery > figure {
+  display: none;
+  overflow: hidden;
+  animation-name: fade;
+  animation-duration: 4s;
+}
+
+/* STREET ART  */
+
+#street_art {
+  padding-bottom: 40px;
+  background-color: var(--pink);
+}
+
+.fotos-streetart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  gap: 20px;
+}
+
+.streetart {
+  width: 30%;
+}
+
+.item-street {
+  width: 100%;
+  height: auto;
+  border: none;
+
+  transition: padding 1s ease;
+}
+
+.item-street:hover {
+  padding: 15px;
+}
 /* AGENDA  */
 
+#events {
+  padding-bottom: 40px;
+  background-color: var(--orange);
+}
 .fotos-seccion {
   display: flex;
   flex-direction: row;
@@ -338,11 +396,25 @@ h2 {
 
 /* TRANSPORTE */
 
+#transporte {
+  padding-bottom: 40px;
+  background-color: var(--pink);
+}
+
+.transporte-img {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 .info-transporte {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  margin-top: 30px;
 }
 
 .info-transporte p {
@@ -352,65 +424,24 @@ h2 {
   margin-left: 100px;
   margin-right: 100px;
   font-size: 14px;
-}
-
-/* CARRUSEL IMAGENES */
-
-#gallery img {
-  width: 100%;
-  vertical-align: middle;
-  height: 500px;
-}
-
-#gallery {
-  width: 100%;
-  margin: 1em auto;
-  margin-top: 80px;
-  margin-bottom: 50px;
-}
-
-#gallery > figure {
-  display: none;
-  overflow: hidden;
-  animation-name: fade;
-  animation-duration: 4s;
-}
-
-/* STREET ART  */
-
-.fotos-streetart {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px;
-  margin-top: 40px;
-  margin-left: 100px;
-  margin-right: 100px;
-  gap: 20px;
-}
-
-.streetart {
-  width: 30%;
-}
-
-.item-street {
-  width: 100%;
-  height: auto;
-  border: none;
-
-  transition: padding 1s ease;
-}
-
-.item-street:hover {
-  padding: 15px;
+  margin-bottom: 80px;
 }
 
 /* TIPS  */
 
+#tips {
+  padding-bottom: 40px;
+}
+
+.tip-section {
+  margin-top: 90px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
 /* FOOTER */
 /* MENÚ NAVEGACIÓN FOOTER */
 footer {
-  background-color: var(--colorAzul);
   margin-top: 50px;
 }
 
@@ -427,14 +458,14 @@ footer {
   font-size: 16px;
   font-family: var(--normalTypo);
   font-weight: 100;
-  color: var(--colorNegro);
+  color: var(--black);
 }
 
 .navbarfooter .city-footer:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 0.25px;
-  color: var(--colorNegro);
+  color: var(--black);
 }
 
 .nav-links-footer {
@@ -445,7 +476,7 @@ footer {
 
 .nav-links-footer a {
   text-decoration: none;
-  color: var(--colorNegro);
+  color: var(--black);
   font-size: 10px;
   font-family: var(--normalTypo);
   font-weight: 100;
@@ -467,7 +498,7 @@ footer {
 }
 
 .social-media a {
-  color: var(--colorNegro);
+  color: var(--black);
   text-decoration: none;
 }
 
