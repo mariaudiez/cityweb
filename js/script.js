@@ -6,13 +6,13 @@ $(document).ready(function () {
   });
 });
 
-// ************************* HOVER CON APARICIÓN DE TEXTO *******************
+// HOVER CON APARICIÓN DE TEXTO
 
 $(".item").hover(function () {
   $(this).find(".item-description").fadeToggle(500);
 });
 
-// *********************** CARRUSEL DE IMÁGNES ************************
+// CARRUSEL DE IMÁGNES
 /**
  * Número de imagen que se está presentando
  */
