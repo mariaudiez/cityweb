@@ -1,0 +1,125 @@
+/* HEADER */
+
+.fondo-header {
+  background-image: none;
+  height: auto;
+  color: var(--colorNegro);
+  padding: 0;
+}
+
+.navbar {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Menú hamburguesa */
+.hamburger span {
+  background-color: var(--black);
+}
+
+.navbar .city a {
+  color: var(--black);
+}
+
+.nav-links a {
+  color: var(--black);
+}
+
+.logo {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Titulos */
+
+h3 {
+  font-family: var(--normalTypo);
+  font-weight: 100;
+  font-size: 3rem;
+  text-align: right;
+  margin-top: -25px;
+  margin-right: 100px;
+}
+
+.invertido-dos {
+  text-align: left;
+  margin-left: 100px;
+}
+
+.line-new {
+  height: 1px;
+  width: 100%;
+  background-color: var(--colorLinea);
+  margin: -6px 0;
+  opacity: 15%;
+}
+
+/* MUSEOS */
+
+.info-museos {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 45px;
+  margin-bottom: 65px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-museos p {
+  font-family: var(--normalTypo);
+  font-weight: 100;
+  text-align: justify;
+}
+
+/* GRAFICA */
+
+.grafico {
+  display: flex;
+  justify-content: center;
+}
+.grafico canvas {
+  margin: 100px;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--red);
+}
+
+/* MEDIA QUERIS  */
+
+@media screen and (max-width: 1000px) {
+  h3 {
+    margin-right: 5px;
+  }
+
+  .invertido-dos {
+    margin-left: 5px;
+  }
+
+  .info-museos {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .grafico canvas {
+    margin: 60px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h3 {
+    font-size: 2rem;
+    margin-top: -15px;
+  }
+
+  .grafico canvas {
+    margin: 30px;
+  }
+
+  .nav-links {
+    background-color: var(--colorRosa);
+  }
+}

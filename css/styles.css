@@ -25,7 +25,9 @@
   --pink: rgba(224, 127, 137, 1);
   --pink2: rgb(235, 176, 182);
   --orange: rgb(246, 165, 67);
+  --red: rgb(207, 48, 48);
   --yellow: rgb(239, 230, 146);
+  --yellow2: rgb(255, 230, 130);
   --black: rgb(0, 0, 0);
 
   --Linea: rgba(0, 0, 0, 0.543);
@@ -54,6 +56,24 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
+  position: relative;
+}
+
+.fondo-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.35;
+  z-index: 1;
+}
+
+.fondo-header > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* MENÚ DE NAVEGACIÓN */
@@ -159,23 +179,7 @@ h2 {
   margin-left: 100px;
 }
 
-.line {
-  height: 1px;
-  width: 100%;
-  background-color: var(--colorLinea);
-  margin: -25px 0;
-  opacity: 15%;
-}
-
-.final-line {
-  height: 1px;
-  width: 100%;
-  background-color: var(--colorLinea);
-  margin: 10px 0;
-  opacity: 15%;
-}
-
-/* Información general arte en londres */
+/* CITY OF ART */
 
 #city-info {
   padding-bottom: 40px;
@@ -190,7 +194,7 @@ h2 {
   text-align: justify;
   margin-left: 100px;
   margin-right: 100px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .carrusel_1 {
@@ -199,7 +203,7 @@ h2 {
   gap: 2em;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding-bottom: 4%;
+  padding-bottom: 3%;
   margin-left: 100px;
   margin-right: 100px;
 }
@@ -222,6 +226,7 @@ h2 {
   display: flex;
   padding-bottom: 2%;
   padding-top: 4%;
+  align-items: stretch;
 }
 
 .explicacion_1 > p {
@@ -235,9 +240,11 @@ h2 {
   width: 75%;
 }
 
-.explicacion_1 > div p {
-  padding-top: 50px;
+.explicacion_1 > div:first-child {
+  display: flex;
+  flex-direction: column;
 }
+
 .explicacion_1 > div:last-child {
   display: flex;
   padding-right: 100px;
@@ -247,9 +254,12 @@ h2 {
 .explicacion_1 > div:last-child img {
   width: 100%;
   border-radius: 0%;
+  object-fit: cover;
+  height: auto;
+  flex: 1;
 }
 
-/* Barrios artisticos */
+/* ART DISTRICTS */
 
 #barrios {
   padding-bottom: 40px;
@@ -261,20 +271,19 @@ h2 {
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 80px;
   gap: 20px;
   transition: margin 1s ease;
 }
 
 .tarjeta_barrio:hover {
-  margin-left: 160px;
+  margin-left: 140px;
 }
 
 .barrio-p {
   font-family: var(--normalTypo);
   font-weight: 100;
   font-size: 12px;
-  text-align: justify;
 }
 
 .barrio-p p:first-child {
@@ -285,6 +294,8 @@ h2 {
 .barrio-img img {
   width: 50%;
   height: auto;
+  display: flex;
+  justify-content: right;
 }
 
 /* CARRUSEL IMAGENES */
@@ -309,11 +320,11 @@ h2 {
   animation-duration: 4s;
 }
 
-/* STREET ART  */
+/* STREET ART */
 
 #street_art {
   padding-bottom: 40px;
-  background-color: var(--pink);
+  background-color: var(--yellow2);
 }
 
 .fotos-streetart {
@@ -342,10 +353,44 @@ h2 {
 .item-street:hover {
   padding: 15px;
 }
-/* AGENDA  */
+
+/* TRANSPORTE */
+
+#transporte {
+  padding-bottom: 10px;
+}
+
+.transporte-img {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.info-transporte {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.info-transporte p {
+  font-family: var(--normalTypo);
+  font-weight: 100;
+  text-align: justify;
+  margin-left: 100px;
+  margin-right: 100px;
+  font-size: 18px;
+  margin-top: 2%;
+  margin-bottom: 80px;
+}
+
+/* EVENTS  */
 
 #events {
-  padding-bottom: 40px;
+  padding-bottom: 70px;
   background-color: var(--orange);
 }
 .fotos-seccion {
@@ -367,8 +412,6 @@ h2 {
   width: 100%;
   height: auto;
   border: none;
-  /* outline: 1px solid var(--marcoFoto);
-  outline-offset: 5px; */
 }
 
 .item-description {
@@ -394,63 +437,97 @@ h2 {
   }
 }
 
-/* TRANSPORTE */
-
-#transporte {
-  padding-bottom: 40px;
-  background-color: var(--pink);
-}
-
-.transporte-img {
-  width: 100%;
-  height: 500px;
-  display: flex;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.info-transporte {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 40px;
-  margin-top: 30px;
-}
-
-.info-transporte p {
-  font-family: var(--normalTypo);
-  font-weight: 100;
-  text-align: justify;
-  margin-left: 100px;
-  margin-right: 100px;
-  font-size: 14px;
-  margin-bottom: 80px;
-}
-
 /* TIPS  */
 
 #tips {
-  padding-bottom: 40px;
+  width: 100%;
 }
 
-.tip-section {
-  margin-top: 90px;
-  margin-left: 100px;
-  margin-right: 100px;
+.tip-seccion {
+  width: 75%;
+  margin: 40px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.tip-column {
+  display: grid;
+  gap: 30px;
+
+  grid-auto-rows: 1fr;
+}
+.tip-column {
+  display: grid;
+  gap: 30px;
+
+  grid-auto-rows: 1fr;
+}
+
+.tips-p {
+  font-family: var(--normalTypo);
+  font-weight: 100;
+  font-size: 12px;
+
+  padding: 20px;
+  background: var(--white);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tips-p p:first-child {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+/* colores */
+
+/* Primera Fila (rosita) */
+.tip-column:first-child .tips-p:nth-child(1),
+.tip-column:last-child .tips-p:nth-child(1) {
+  background-color: var(--pink2);
+}
+
+/* Segunda Fila (naranja) */
+.tip-column:first-child .tips-p:nth-child(2),
+.tip-column:last-child .tips-p:nth-child(2) {
+  background-color: var(--orange);
+}
+
+/* Tercera Fila (amarillo) */
+.tip-column:first-child .tips-p:nth-child(3),
+.tip-column:last-child .tips-p:nth-child(3) {
+  background-color: var(--yellow2);
+}
+
+/* Hover */
+
+.tips-p {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tips-p:hover {
+  transform: scale(1.05); /* crece un 5% */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* sombra suave */
 }
 
 /* FOOTER */
 /* MENÚ NAVEGACIÓN FOOTER */
 footer {
-  margin-top: 50px;
+  background-color: var(--red);
+  margin-top: 5%;
 }
 
 .navbarfooter {
   display: flex;
-  flex-direction: column;
-  justify-content: left;
-  margin-left: 30px;
-  padding-top: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
 }
 
 .navbarfooter .city-footer a {
@@ -458,25 +535,27 @@ footer {
   font-size: 16px;
   font-family: var(--normalTypo);
   font-weight: 100;
-  color: var(--black);
+  color: var(--white);
 }
 
 .navbarfooter .city-footer:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 0.25px;
-  color: var(--black);
+  color: var(--white);
 }
 
 .nav-links-footer {
   list-style: none;
   display: flex;
   gap: 20px;
+  justify-content: right;
+  margin-right: 30px;
 }
 
 .nav-links-footer a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--white);
   font-size: 10px;
   font-family: var(--normalTypo);
   font-weight: 100;
@@ -488,26 +567,13 @@ footer {
   text-decoration-thickness: 0.25px;
 }
 
-/* ICONOS REDES SOCIALES */
-.social-media {
-  margin-left: 30px;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-}
-
-.social-media a {
-  color: var(--black);
-  text-decoration: none;
-}
-
 /* LOGOTIPO FOOTER */
-.logo {
+.logo-footer {
   width: 100%;
 }
 .logo img {
   width: 100%;
+  padding: 20px;
 }
 
 /* RESPONSIVE */
