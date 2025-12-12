@@ -29,10 +29,11 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <link href="css/museos.css" rel="stylesheet" type="text/css" />
   </head>
+
   <body>
     <header class="fondo-header">
       <nav class="navbar">
-        <div class="city" data-aos="fade-right"><a href="museos.html">LONDON</a></div>
+        <div class="city" data-aos="fade-right"><a href="index.html">LONDON</a></div>
         <div class="hamburger" id="hamburger">
           <span></span>
           <span></span>
@@ -51,21 +52,299 @@
         <img src="https://ik.imagekit.io/mariaudiez/LOGOTIPO_BLANCO_LONDON_ART.svg" data-aos="fade-up">
       </div>
     </header>
-    <body>
-      <main>
-        <h1 class="invertido" data-aos="fade-left">ART</h1>
-        <h3>GALLERIES</h3>
-        <div class="line-new"></div>
-        <div class="info-museos">
-          <P>INFO MUSEOS</P>
-        </div>
-        <h3 class="invertido-dos">MOST VISITED MUSEUMS</h3>
-        <div class="line-new"></div>
-        <div class="grafico">
-          <canvas id="linea"></canvas>
-        </div>
-        <h1 class="invertido" data-aos="fade-left">DISCOVER LONDON!</h1>
-        <div class="line"></div>
+    
+    <main>
+        <h1 class="invertido" data-aos="fade-left">MUSEUMS</h1>
+        <h3>Where beauty rests</h3>
+        
+
+        <section class="museum-grid">
+
+            <!-- 1. Tate Modern -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/Tate_Modern_viewed_from_Thames_Pleasure_Boat_-_geograph.org.uk_Wikimedia_Commons.jpg" alt="Tate Modern">
+                <div class="museum-info">
+                    <h3 class="museum-title">Tate Modern</h3>
+                    <a href="https://www.tate.org.uk/visit/tate-modern" target="_blank" class="museum-link">
+                        www.tate.org.uk
+                    </a>
+                    <p class="museum-address">Bankside, London SE1 9TG</p>
+                </div>
+            </div>
+
+            <!-- 2. The National Gallery -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/national%20gallery,%20london.JPG" alt="National Gallery">
+                <div class="museum-info">
+                    <h3 class="museum-title">National Gallery</h3>
+                    <a href="https://www.nationalgallery.org.uk" target="_blank" class="museum-link">
+                        www.nationalgallery.org.uk
+                    </a>
+                    <p class="museum-address">Trafalgar Square, London WC2N 5DN</p>
+                </div>
+            </div>
+
+            <!-- 3. Victoria & Albert Museum -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/interior-Victoria-Albert-Museum-London-United-Kingdom.jpg.webp" alt="Victoria and Albert Museum">
+                <div class="museum-info">
+                    <h3 class="museum-title">V&A Museum</h3>
+                    <a href="https://www.vam.ac.uk" target="_blank" class="museum-link">
+                        www.vam.ac.uk
+                    </a>
+                    <p class="museum-address">Cromwell Road, London SW7 2RL</p>
+                </div>
+            </div>
+
+            <!-- 4. Tate Britain -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/tate-britain-0015489713d13428.jpg" alt="Tate Britain">
+                <div class="museum-info">
+                    <h3 class="museum-title">Tate Britain</h3>
+                    <a href="https://www.tate.org.uk/visit/tate-britain" target="_blank" class="museum-link">
+                        www.tate.org.uk
+                    </a>
+                    <p class="museum-address">Millbank, London SW1P 4RG</p>
+                </div>
+            </div>
+
+            <!-- 5. British Museum -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/20240606_BLOG_1717663480.png" alt="British Museum">
+                <div class="museum-info">
+                    <h3 class="museum-title">British Museum</h3>
+                    <a href="https://www.britishmuseum.org" target="_blank" class="museum-link">
+                        www.britishmuseum.org
+                    </a>
+                    <p class="museum-address">Great Russell St, London WC1B 3DG</p>
+                </div>
+            </div>
+
+            <!-- 6. Saatchi Gallery -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/saatchi-gallery.jpg" alt="Saatchi Gallery">
+                <div class="museum-info">
+                    <h3 class="museum-title">Saatchi Gallery</h3>
+                    <a href="https://www.saatchigallery.com" target="_blank" class="museum-link">
+                        www.saatchigallery.com
+                    </a>
+                    <p class="museum-address">King’s Road, London SW3 4RY</p>
+                </div>
+            </div>
+
+            <!-- 7. Serpentine Galleries -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/serpentine-gallery-pavilion-big-bjarke-ingels-hot-list_dezeen_sq.jpg" alt="Serpentine Galleries">
+                <div class="museum-info">
+                    <h3 class="museum-title">Serpentine Galleries</h3>
+                    <a href="https://www.serpentinegalleries.org" target="_blank" class="museum-link">
+                        www.serpentinegalleries.org
+                    </a>
+                    <p class="museum-address">Kensington Gardens, London W2 3XA</p>
+                </div>
+            </div>
+
+            <!-- 8. Barbican Art Gallery -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/6_0.jpg" alt="Barbican Art Gallery">
+                <div class="museum-info">
+                    <h3 class="museum-title">Barbican Art Gallery</h3>
+                    <a href="https://www.barbican.org.uk" target="_blank" class="museum-link">
+                        www.barbican.org.uk
+                    </a>
+                    <p class="museum-address">Silk Street, London EC2Y 8DS</p>
+                </div>
+            </div>
+
+            <!-- 9. Design Museum -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/Designing-Duggee-image-credit-Ed-Reeve-web-header.jpg.webp" alt="Design Museum">
+                <div class="museum-info">
+                    <h3 class="museum-title">Design Museum</h3>
+                    <a href="https://designmuseum.org" target="_blank" class="museum-link">
+                        www.designmuseum.org
+                    </a>
+                    <p class="museum-address">224 Kensington High St, London W8 6AG</p>
+                </div>
+            </div>
+
+            <!-- 10. Whitechapel Gallery -->
+            <div class="museum-card">
+                <img src="https://ik.imagekit.io/mariaudiez/Image-1-High-Res.jpg" alt="Whitechapel Gallery">
+                <div class="museum-info">
+                    <h3 class="museum-title">Whitechapel Gallery</h3>
+                    <a href="https://whitechapelgallery.org" target="_blank" class="museum-link">
+                        www.whitechapelgallery.org
+                    </a>
+                    <p class="museum-address">77–82 Whitechapel High St, London E1 7QX</p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- Galerias  meter info + ajustar flexbox -->
+        <h1 data-aos="fade-right">GALLERIES</h1>
+        <h3 class="invertido-dos">The museum is not enough</h3>
+        <section class="gallery-grid">  
+            
+
+
+            
+                <article class="gallery-card">
+                        
+                        <div class="gallery-image-wrapper">
+                            <img src="https://ik.imagekit.io/mariaudiez/c89f5d3481f7e3b3c9ec65a468ecdce5.jpg" alt="White Cube">
+
+                            <a href="https://whitecube.com" target="_blank" class="gallery-name-overlay">
+                                WHITE CUBE
+                            </a>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p class="gallery-role">Gallery</p>
+                            <p class="gallery-address">144–152 Bermondsey St, London SE1 3TQ</p>
+                            <p class="gallery-phone">+44 20 7740 0060</p>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card">
+                        
+                        <div class="gallery-image-wrapper">
+                            <img src="https://ik.imagekit.io/mariaudiez/c89f5d3481f7e3b3c9ec65a468ecdce5.jpg" alt="White Cube">
+
+                            <a href="https://whitecube.com" target="_blank" class="gallery-name-overlay">
+                                WHITE CUBE
+                            </a>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p class="gallery-role">Gallery</p>
+                            <p class="gallery-address">144–152 Bermondsey St, London SE1 3TQ</p>
+                            <p class="gallery-phone">+44 20 7740 0060</p>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card">
+                        
+                        <div class="gallery-image-wrapper">
+                            <img src="https://ik.imagekit.io/mariaudiez/c89f5d3481f7e3b3c9ec65a468ecdce5.jpg" alt="White Cube">
+
+                            <a href="https://whitecube.com" target="_blank" class="gallery-name-overlay">
+                                WHITE CUBE
+                            </a>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p class="gallery-role">Gallery</p>
+                            <p class="gallery-address">144–152 Bermondsey St, London SE1 3TQ</p>
+                            <p class="gallery-phone">+44 20 7740 0060</p>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card">
+                        
+                        <div class="gallery-image-wrapper">
+                            <img src="https://ik.imagekit.io/mariaudiez/c89f5d3481f7e3b3c9ec65a468ecdce5.jpg" alt="White Cube">
+
+                            <a href="https://whitecube.com" target="_blank" class="gallery-name-overlay">
+                                WHITE CUBE
+                            </a>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p class="gallery-role">Gallery</p>
+                            <p class="gallery-address">144–152 Bermondsey St, London SE1 3TQ</p>
+                            <p class="gallery-phone">+44 20 7740 0060</p>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card">
+                        
+                        <div class="gallery-image-wrapper">
+                            <img src="https://ik.imagekit.io/mariaudiez/c89f5d3481f7e3b3c9ec65a468ecdce5.jpg" alt="White Cube">
+
+                            <a href="https://whitecube.com" target="_blank" class="gallery-name-overlay">
+                                WHITE CUBE
+                            </a>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p class="gallery-role">Gallery</p>
+                            <p class="gallery-address">144–152 Bermondsey St, London SE1 3TQ</p>
+                            <p class="gallery-phone">+44 20 7740 0060</p>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card">
+                        
+                        <div class="gallery-image-wrapper">
+                            <img src="https://ik.imagekit.io/mariaudiez/c89f5d3481f7e3b3c9ec65a468ecdce5.jpg" alt="White Cube">
+
+                            <a href="https://whitecube.com" target="_blank" class="gallery-name-overlay">
+                                WHITE CUBE
+                            </a>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p class="gallery-role">Gallery</p>
+                            <p class="gallery-address">144–152 Bermondsey St, London SE1 3TQ</p>
+                            <p class="gallery-phone">+44 20 7740 0060</p>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card">
+                        
+                        <div class="gallery-image-wrapper">
+                            <img src="https://ik.imagekit.io/mariaudiez/c89f5d3481f7e3b3c9ec65a468ecdce5.jpg" alt="White Cube">
+
+                            <a href="https://whitecube.com" target="_blank" class="gallery-name-overlay">
+                                WHITE CUBE
+                            </a>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p class="gallery-role">Gallery</p>
+                            <p class="gallery-address">144–152 Bermondsey St, London SE1 3TQ</p>
+                            <p class="gallery-phone">+44 20 7740 0060</p>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card">
+                        
+                        <div class="gallery-image-wrapper">
+                            <img src="https://ik.imagekit.io/mariaudiez/c89f5d3481f7e3b3c9ec65a468ecdce5.jpg" alt="White Cube">
+
+                            <a href="https://whitecube.com" target="_blank" class="gallery-name-overlay">
+                                WHITE CUBE
+                            </a>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p class="gallery-role">Gallery</p>
+                            <p class="gallery-address">144–152 Bermondsey St, London SE1 3TQ</p>
+                            <p class="gallery-phone">+44 20 7740 0060</p>
+                        </div>
+                    </article>
+
+            
+
+             
+
+        </section>
+
+
+        <section id="grafico">
+            <h2>MOST VISITED MUSEUMS</h2>
+            <canvas id="chartMuseos"></canvas>
+        </section>
+
+
+
+        
+       
+        
       </main>
 
      <footer>
@@ -90,18 +369,11 @@
         </div>
      </footer>
     
-    </body>
-    <!-- JQUERY CDN  -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
-    <!-- AOS JS  -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- JS -->
+   
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/chart.js"></script>
     <script src="js/script.js"></script>
+
+
   </body>
 </html>

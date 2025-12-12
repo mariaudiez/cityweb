@@ -50,91 +50,38 @@ $(document).ready(function () {
   setImagen();
 });
 
-// *********************************** GRÁFICO *********************************
-/**
- * Función para generar el gráfico de línea
- */
-function cargaGraficoLinea() {
-  var datos = {
-    labels: [
-      "ene",
-      "feb",
-      "mar",
-      "abr",
-      "may",
-      "jun",
-      "jul",
-      "ago",
-      "sept",
-      "oct",
-      "nov",
-      "dic",
-    ],
-    datasets: [
-      {
-        label: "2022",
-        backgroundColor: "black",
-        borderColor: "black", // Color del borde para que sea una línea
-        fill: false, // Desactiva el relleno bajo la línea
-        data: [
-          500, 1000, 1500, 2000, 2500, 3000, 3500, 3000, 2000, 2500, 3000, 2800,
-        ],
+// CHART
+
+document.addEventListener("DOMContentLoaded", function () {
+  const ctx = document.getElementById("chartMuseos").getContext("2d");
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: [
+        "British Museum",
+        "Tate Modern",
+        "National Gallery",
+        "V&A Museum",
+        "Natural History Museum",
+        "Science Museum",
+      ],
+      datasets: [
+        {
+          label: "Visitantes por año (en millones)",
+          data: [5.9, 5.7, 5.2, 3.3, 4.1, 3.1],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
       },
-
-      {
-        label: "2023",
-        backgroundColor: "rgba(224, 127, 137, 1)",
-        borderColor: "rgba(224, 127, 137, 1)",
-        fill: false,
-        data: [
-          1000, 2000, 2500, 3000, 3500, 4000, 3500, 3000, 2500, 2700, 3200,
-          3000,
-        ],
-      },
-    ],
-  };
-
-  var grafico = $("#linea");
-  new Chart(grafico, {
-    type: "line",
-    data: datos,
-  });
-}
-
-$(document).ready(function () {
-  "use strict";
-
-  if ($("#linea").length) {
-    cargaGraficoLinea();
-  }
-});
-
-// ********************************** VALIDACIÓN FORMULARIO CORREO ELECTRÓNICO *********************
-
-$(document).ready(function () {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Patrón básico para correos
-
-  // Escucha del evento input en el campo de correo
-  $("#email").on("input", function () {
-    const email = $(this).val().trim();
-
-    if (emailRegex.test(email)) {
-      $(this).removeClass("invalid").addClass("valid"); // Borde verde
-      $("#error-email").hide(); // Ocultar el mensaje de error
-    } else {
-      $(this).removeClass("valid").addClass("invalid"); // Borde rojo
-      $("#error-email").show(); // Mostrar el mensaje de error
-    }
-  });
-
-  // Validación final al enviar el formulario
-  $("#miFormulario").on("submit", function (e) {
-    const email = $("#email").val().trim();
-
-    if (!emailRegex.test(email)) {
-      e.preventDefault(); // Evitar el envío si el correo es inválido
-      alert("Por favor, corrige el correo antes de enviar.");
-    }
+    },
   });
 });
 
