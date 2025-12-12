@@ -12,17 +12,11 @@ $(".item").hover(function () {
   $(this).find(".item-description").fadeToggle(500);
 });
 
-// CARRUSEL DE IMÁGNES
 /**
  * Número de imagen que se está presentando
  */
 let indice = 1;
 
-/**
- * Presenta la imagen que corresponda a partir del índice.
- * Además, tiene un temporizador de 3s para mostrar la
- * siguiente imagen
- */
 function setImagen() {
   let figures = $("#gallery > figure");
   let circles = $("#circles > div");
@@ -85,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ******************************************* MENÚ RESPONSIVE *****************************
+//  MENÚ RESPONSIVE
 
 $(document).ready(function () {
   const hamburger = $("#hamburger");

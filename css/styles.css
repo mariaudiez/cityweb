@@ -32,8 +32,8 @@
 
   --Linea: rgba(0, 0, 0, 0.543);
 
-  --normalTypo: "Roboto Condensed";
-  --specialTypo: "Casanova";
+  --normaltypo: "Roboto Condensed";
+  --specialtypo: "Casanova";
 }
 
 * {
@@ -52,7 +52,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: var(--colorBlanco);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -66,7 +66,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: var(--black);
   opacity: 0.35;
   z-index: 1;
 }
@@ -81,37 +81,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2000;
+  position: relative;
 }
 
-/* NOMBRE DE LA CIUDAD + INFORMACIÓN A LA IZQUIERDA */
+/* TEXTO IZQUIERDA */
 .navbar .city a {
   text-decoration: none;
   color: var(--white);
-  z-index: 10000;
-}
-
-.navbar .city {
-  text-decoration: none;
   font-size: 1.2rem;
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
   z-index: 10000;
 }
 
-/*  efecto underline al hacer hover */
+/* Hover */
 .navbar .city:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 0.25px;
+  color: var(--white);
 }
 
-/* Botón menú hamburguesa */
+/* menú hamburguesa */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
-  z-index: 100;
+  z-index: 4000;
+  position: relative;
 }
 
 .hamburger span {
@@ -122,27 +121,37 @@
   transition: all 0.3s;
 }
 
-/* ESTRUCTURA APARTADOS MENÚ DE NAVEGACIÓN */
+/* MENÚ PRINCIPAL */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
+  z-index: 3000;
+  position: relative;
 }
 
-/* diseño de cada uno de ellos */
 .nav-links a {
   text-decoration: none;
   color: var(--white);
   font-size: 0.9rem;
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
 }
 
-/* efectos hover */
 .nav-links a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 0.25px;
+}
+
+/* NOMBRE DE LA CIUDAD + INFORMACIÓN A LA IZQUIERDA */
+
+.navbar .city {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: var(--normaltypo);
+  font-weight: 100;
+  z-index: 10000;
 }
 
 /* AÑADIMOS EL LOGOTIPO DE LA WEB */
@@ -189,7 +198,7 @@ h2 {
 
 #city-info p {
   overflow: hidden;
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
   text-align: justify;
   margin-left: 100px;
@@ -263,7 +272,6 @@ h2 {
 
 #barrios {
   padding-bottom: 40px;
-  /* background-color: var(--pink2); */
 }
 .tarjeta_barrio {
   margin-top: 50px;
@@ -281,7 +289,7 @@ h2 {
 }
 
 .barrio-p {
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
   font-size: 12px;
 }
@@ -377,7 +385,7 @@ h2 {
 }
 
 .info-transporte p {
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
   text-align: justify;
   margin-left: 100px;
@@ -417,7 +425,7 @@ h2 {
 .item-description {
   display: none;
   margin-top: 10px;
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
   font-size: 10px;
 }
@@ -533,7 +541,7 @@ footer {
 .navbarfooter .city-footer a {
   text-decoration: none;
   font-size: 16px;
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
   color: var(--white);
 }
@@ -557,7 +565,7 @@ footer {
   text-decoration: none;
   color: var(--white);
   font-size: 10px;
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
 }
 
@@ -578,8 +586,24 @@ footer {
 
 /* RESPONSIVE */
 
+@media screen and (max-width: 1200px) {
+  #city-info p {
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 17px;
+  }
+
+  .carrusel_1 {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  .explicacion_1 {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
 @media screen and (max-width: 1000px) {
-  /* Títulos */
   h1 {
     margin-left: 5px;
   }
@@ -609,26 +633,142 @@ footer {
     margin-left: 5px;
     margin-right: 5px;
   }
-}
 
-/* Lega un momento en lo que podiamos considerar ya un tamaño tablet que hay que hacer cambios para organizar el layout de la web de una manera más acorde a los tamaños próximos */
-
-@media screen and (max-width: 700px) {
-  /* Vamos a empezar por reducir los títulos de tamaño para que estén acordes a la pantalla */
-  h1 {
-    font-size: 4rem;
+  .explicacion_1 {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .line {
-    margin: -13px 0;
+  .explicacion_1 > div:first-child {
+    width: 100%;
+  }
+
+  .explicacion_1 > div:last-child {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .carrusel_1 > div {
+    flex: 45%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--black);
+    height: 400px;
+    width: 100%;
+    justify-content: end;
+    align-items: flex-end;
+    gap: 15px;
+    z-index: 10;
+    padding-bottom: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-right: 20px;
+  }
+
+  .nav-links li:last-child {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background-color: var(--black);
+    padding: 20px;
+    gap: 15px;
+    border-radius: 6px;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    background-color: var(--black);
+  }
+
+  #city-info p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  .explicacion_1 {
+    padding-top: 20px;
+  }
+
+  .carrusel_1 {
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 1.5em;
+  }
+
+  .carrusel_1 > div {
+    flex: 100%;
+  }
+
+  .carrusel_1 > div img {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #city-info p {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .carrusel_1 > div img {
+    height: 200px;
+  }
+
+  .explicacion_1,
+  .carrusel_1 {
+    gap: 1em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 4rem;
   }
 
   h2 {
     font-size: 2rem;
   }
 
-  /* Ahora vamos a pasar a adptar el layout de la imáganes */
-  /* Emepezando por la agenda y la gastroinfo */
   .fotos-seccion {
     flex-wrap: wrap;
     justify-content: center;
@@ -638,7 +778,6 @@ footer {
     width: 40%;
   }
 
-  /* Agustamos las imágenes de las zonas verdes */
   .fotos-streetart {
     flex-wrap: wrap;
     justify-content: center;
@@ -647,7 +786,6 @@ footer {
     width: 40%;
   }
 
-  /* Agustamos el apartedo de playas de la home */
   .tarjeta_barrio {
     flex-direction: column;
     margin-left: 5px;
@@ -666,38 +804,6 @@ footer {
     width: 70%;
   }
 
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: var(--colorAzul);
-    height: 400px;
-    width: 100%;
-    justify-content: end;
-    align-items: flex-end;
-    gap: 15px;
-    z-index: 10;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin-right: 20px;
-  }
-
-  .nav-links li:last-child {
-    margin-bottom: 20px;
-  }
-
-  /* Agustamos el menú de navegación del footer */
   .navbarfooter {
     gap: 20px;
   }
@@ -708,20 +814,15 @@ footer {
   }
 }
 
-/* Por último, vas a hacer ajustes en los tamaños de pantalla más pequeños, los que corresponderían a los móviles */
 @media screen and (max-width: 500px) {
-  /* Ahora vamos a pasar a adptar el layout de la imáganes */
-  /* Emepezando por la agenda y la gastroinfo */
   .item {
     width: 90%;
   }
 
-  /* Agustamos las imágenes de las zonas verdes */
   .streetart {
     width: 90%;
   }
 
-  /* Y por último ajustamos el layout de la parte de playas, eliminando la información de cada una debido a la anchura de página de la que disponemos */
   .barrio-p p:last-child {
     display: none;
   }

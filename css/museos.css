@@ -39,7 +39,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: var(--black);
   opacity: 0.35;
   z-index: 1;
 }
@@ -53,6 +53,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2000;
+  position: relative;
 }
 
 /* NOMBRE DE LA CIUDAD + INFORMACIÓN A LA IZQUIERDA */
@@ -65,7 +67,7 @@
 .navbar .city {
   text-decoration: none;
   font-size: 1.2rem;
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
   z-index: 10000;
 }
@@ -83,7 +85,9 @@
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
-  z-index: 100;
+
+  z-index: 4000;
+  position: relative;
 }
 
 .hamburger span {
@@ -99,6 +103,8 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  z-index: 3000;
+  position: relative;
 }
 
 /* diseño de cada uno de ellos */
@@ -106,7 +112,7 @@
   text-decoration: none;
   color: var(--white);
   font-size: 0.9rem;
-  font-family: var(--normalTypo);
+  font-family: var(--normaltypo);
   font-weight: 100;
 }
 
@@ -367,36 +373,181 @@ footer {
 
 /* MEDIA QUERIS  */
 
-@media screen and (max-width: 1000px) {
+/* ORDENADOR */
+@media screen and (max-width: 1200px) {
+  /* MUSEOS → 5 → 3 COLUMNAS */
+  .museum-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* GALERÍAS → 4 → 3 COLUMNAS */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  h1 {
+    font-size: 6rem;
+    margin-left: 40px;
+  }
+
+  .invertido {
+    margin-right: 40px;
+  }
+
   h3 {
-    margin-right: 5px;
+    margin-right: 40px;
   }
 
   .invertido-dos {
-    margin-left: 5px;
-  }
-
-  .info-museos {
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-
-  .grafico canvas {
-    margin: 60px;
+    margin-left: 40px;
   }
 }
 
-@media screen and (max-width: 700px) {
-  h3 {
-    font-size: 2rem;
-    margin-top: -15px;
-  }
-
-  .grafico canvas {
-    margin: 30px;
+/* TABLET */
+@media screen and (max-width: 900px) {
+  .hamburger {
+    display: flex;
   }
 
   .nav-links {
-    background-color: var(--colorRosa);
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--black);
+    height: 400px;
+    width: 100%;
+    justify-content: end;
+    align-items: flex-end;
+    gap: 15px;
+    z-index: 10;
+    padding-bottom: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-right: 20px;
+  }
+
+  .nav-links li:last-child {
+    margin-bottom: 20px;
+  }
+
+  /* MUSEOS - 2 COLUMNAS */
+  .museum-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* GALERÍAS - 2 COLUMNAS */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: 4.6rem;
+    margin-left: 20px;
+  }
+  .invertido {
+    margin-right: 20px;
+  }
+
+  h3 {
+    font-size: 2.3rem;
+    margin-right: 20px;
+  }
+
+  .invertido-dos {
+    margin-left: 20px;
+  }
+
+  /* HEADER LOGO */
+  .logo img {
+    width: 90%;
+  }
+}
+
+/* TABLET */
+@media screen and (max-width: 700px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background-color: var(--black);
+    padding: 20px;
+    gap: 15px;
+    border-radius: 6px;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    background-color: var(--black);
+  }
+
+  .navbarfooter {
+    gap: 20px;
+  }
+
+  .nav-links-footer {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ---------- TÍTULOS ---------- */
+  h1 {
+    font-size: 3.4rem;
+    margin-left: 10px;
+  }
+
+  .invertido {
+    margin-right: 10px;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-right: 10px;
+  }
+
+  .invertido-dos {
+    margin-left: 10px;
+  }
+
+  /* ---------- GRID ---------- */
+
+  /* MUSEOS - 1 COLUMNA */
+  .museum-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* GALERÍAS - 1 COLUMNA */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .museum-card {
+    height: 260px;
+  }
+
+  .gallery-card img {
+    height: 230px;
   }
 }
